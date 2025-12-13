@@ -1,0 +1,33 @@
+$break-large: 720px;
+
+/* Override Bootstrap variables as desired before importing Bootstrap */
+$primary: #28a745;
+
+/* Override Fork Me ribbon colors */
+.github-fork-ribbon.right-top:before {
+  background-color: #444;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+.main-container {
+  padding-top: 20px;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-top: 100px;
+  color: #777;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+
+  @media screen and (min-width: $break-large) {
+    text-align: left;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
