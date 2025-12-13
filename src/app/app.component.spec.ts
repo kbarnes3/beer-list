@@ -18,16 +18,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Base Angular App'`, () => {
+  it(`should have as title 'Beer'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Base Angular App');
+    expect(app.title).toEqual('Beer');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.navbar-brand').textContent).toContain('Base Angular App');
+    expect(compiled.querySelector('.navbar-brand').textContent).toContain('Beer');
   });
 });

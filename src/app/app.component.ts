@@ -9,6 +9,6 @@ import { versionInfo } from './version-info';
     imports: [RouterOutlet]
 })
 export class AppComponent {
-  title = 'Base Angular App';
+  title = 'Beer';
   gitVersion: string = versionInfo.hash;
 }

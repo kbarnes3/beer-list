@@ -1,5 +1,5 @@
 {
-  "name": "base-angular-app",
+  "name": "beer-list",
   "version": "0.0.0",
   "engines": {
     "node": ">=20.0.0"

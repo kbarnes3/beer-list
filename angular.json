@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "base-angular-app": {
+    "beer-list": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "base-angular-app:build"
+            "buildTarget": "beer-list:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "base-angular-app:build:production"
+              "buildTarget": "beer-list:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "base-angular-app:build"
+            "buildTarget": "beer-list:build"
           }
         },
         "test": {
@@ -110,11 +110,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "base-angular-app:serve"
+            "devServerTarget": "beer-list:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "base-angular-app:serve:production"
+              "devServerTarget": "beer-list:serve:production"
             }
           }
         },
