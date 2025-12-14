@@ -11,6 +11,12 @@ export interface Beer {
   description: string;
 }
 
+const EVENT_NAME: string = 'Winter Beer Fest 2025';
+
+const EVENT_URL: string = 'https://www.washingtonbrewersguild.org/winterbeerfest2025/';
+
+const DATA_SOURCE_URL: string = 'https://washingtonbrewersguild-my.sharepoint.com/:x:/g/personal/shawna_washingtonbrewersguild_org/IQADseMm6fE5R54LPyb1VvkSARVZMdC4RQY-Y-qswKjFel0?e=MYDKgS';
+
 const BEER_DATA: Beer[] = [
   { brewery: 'Anacortes Brewery', name: 'Broadsword', abv: 8.3, style: 'Scotch Ale', description: 'Black Patent, Caramel, Chocolate, Munich & Peat smoked malts produce dark color, malty flavor and subtle smokiness in this robust Scottish Ale. Perle, Cascade & Mt Hood provide a balanced bitterness.' },
   { brewery: 'Anacortes Brewery', name: 'Klosterbier', abv: 5.3, style: 'Bavarian Dark Lager', description: 'Smooth, dark lager originally brewed at the Anacortes Brewery under the guidance of the visiting brewmaster of The Kalt Loch Brewery. Inspired by a dark lager brewed for the Engelberg Abbey. Delicately hopped with Perle hops, this beer has become a local favorite.' },
@@ -128,6 +134,9 @@ const BEER_DATA: Beer[] = [
   styleUrl: './beer-table.component.scss',
 })
 export class BeerTableComponent implements AfterViewInit {
+  event_name = EVENT_NAME;
+  event_url = EVENT_URL;
+  data_source_url = DATA_SOURCE_URL;
   displayedColumns: string[] = ['brewery', 'name', 'abv', 'style'];
   dataSource = new MatTableDataSource(BEER_DATA);
 
