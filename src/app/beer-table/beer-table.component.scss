@@ -1,0 +1,16 @@
+.beer-table-container {
+  padding: 16px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-header-cell {
+  font-weight: bold;
+}
+
+td.mat-cell {
+  padding: 8px 16px;
+}

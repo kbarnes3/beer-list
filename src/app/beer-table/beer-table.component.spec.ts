@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BeerTableComponent } from './beer-table.component';
 
@@ -8,7 +9,7 @@ describe('BeerTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BeerTableComponent]
+      imports: [BeerTableComponent, NoopAnimationsModule]
     })
     .compileComponents();
 
