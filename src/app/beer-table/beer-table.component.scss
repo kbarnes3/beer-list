@@ -17,10 +17,10 @@ td.mat-cell {
 
 .beer-name {
   cursor: pointer;
-  color: #1976d2;
+  color: var(--bs-link-color);
   text-decoration: underline;
 
   &:hover {
-    color: #1565c0;
+    color: var(--bs-link-hover-color);
   }
 }
