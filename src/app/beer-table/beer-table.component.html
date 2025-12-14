@@ -40,6 +40,11 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
+<p class="event-link">
+  <a [href]="event_url" target="_blank" rel="noopener noreferrer">
+    {{ event_name }} website
+  </a>
+</p>
 <p class="data-source">
   <a [href]="data_source_url" target="_blank" rel="noopener noreferrer">
     Beer data source
