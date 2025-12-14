@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
@@ -13,11 +13,11 @@ type ThemeMode = 'light' | 'dark' | 'auto';
     imports: [RouterOutlet, NgbDropdownModule, NgClass]
 })
 export class AppComponent implements OnInit {
+  private platformId = inject<Object>(PLATFORM_ID);
+
   title = 'Beer';
   gitVersion: string = versionInfo.hash;
   currentTheme: ThemeMode = 'auto';
-
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
