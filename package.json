@@ -30,6 +30,7 @@
     "@popperjs/core": "^2.11.8",
     "@types/webpack-env": "^1.18.8",
     "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
     "git-describe": "^4.1.1",
     "github-fork-ribbon-css": "^0.2.3",
     "karma-junit-reporter": "^2.0.1",
