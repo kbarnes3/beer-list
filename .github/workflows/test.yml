@@ -24,7 +24,6 @@ jobs:
         cache: 'npm'
     - name: Install Node dependencies
       run: |
-        cd front
         npm install --location=global npm@11
         npm install --location=global @angular/cli
         npm ci
