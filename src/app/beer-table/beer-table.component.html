@@ -10,7 +10,17 @@
     <!-- Beer Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Beer Name</th>
-      <td mat-cell *matCellDef="let beer">{{ beer.name }}</td>
+      <td mat-cell *matCellDef="let beer">
+        <span 
+          class="beer-name" 
+          [ngbPopover]="beer.description" 
+          popoverTitle="{{ beer.name }}"
+          triggers="click"
+          placement="bottom"
+          container="body">
+          {{ beer.name }}
+        </span>
+      </td>
     </ng-container>
 
     <!-- ABV Column -->
@@ -23,12 +33,6 @@
     <ng-container matColumnDef="style">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Style</th>
       <td mat-cell *matCellDef="let beer">{{ beer.style }}</td>
-    </ng-container>
-
-    <!-- Description Column -->
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
-      <td mat-cell *matCellDef="let beer">{{ beer.description }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
