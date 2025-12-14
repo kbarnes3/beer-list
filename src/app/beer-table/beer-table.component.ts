@@ -1,6 +1,7 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSortModule, MatSort } from '@angular/material/sort';
+import { NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 
 export interface Beer {
   brewery: string;
@@ -122,12 +123,12 @@ const BEER_DATA: Beer[] = [
 
 @Component({
   selector: 'app-beer-table',
-  imports: [MatTableModule, MatSortModule],
+  imports: [MatTableModule, MatSortModule, NgbPopoverModule],
   templateUrl: './beer-table.component.html',
   styleUrl: './beer-table.component.scss',
 })
 export class BeerTableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['brewery', 'name', 'abv', 'style', 'description'];
+  displayedColumns: string[] = ['brewery', 'name', 'abv', 'style'];
   dataSource = new MatTableDataSource(BEER_DATA);
 
   @ViewChild(MatSort) sort!: MatSort;

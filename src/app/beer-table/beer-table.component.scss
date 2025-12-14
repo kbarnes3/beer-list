@@ -14,3 +14,13 @@ th.mat-header-cell {
 td.mat-cell {
   padding: 8px 16px;
 }
+
+.beer-name {
+  cursor: pointer;
+  color: #1976d2;
+  text-decoration: underline;
+
+  &:hover {
+    color: #1565c0;
+  }
+}
