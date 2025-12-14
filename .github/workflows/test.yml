@@ -29,13 +29,10 @@ jobs:
         npm ci
     - name: Run ng lint
       run: |
-        cd front
         npm run-script lint
     - name: Run ng test
       run: |
-        cd front
         npm run-script test-headless
     - name: Run ng build
       run: |
-        cd front
         npm run-script build
