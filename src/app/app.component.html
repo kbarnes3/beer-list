@@ -2,6 +2,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
     <span class="navbar-brand">🍺{{ title }}🍺</span>
+    <div class="ms-auto" ngbDropdown>
+      <button class="btn btn-outline-light" ngbDropdownToggle>
+        <span class="bi" [ngClass]="getThemeIcon()"></span>
+      </button>
+      <div ngbDropdownMenu class="dropdown-menu-end">
+        <button ngbDropdownItem (click)="setTheme('light')" [class.active]="currentTheme === 'light'">
+          <span class="bi bi-sun-fill me-2"></span> Light
+        </button>
+        <button ngbDropdownItem (click)="setTheme('dark')" [class.active]="currentTheme === 'dark'">
+          <span class="bi bi-moon-fill me-2"></span> Dark
+        </button>
+        <button ngbDropdownItem (click)="setTheme('auto')" [class.active]="currentTheme === 'auto'">
+          <span class="bi bi-circle-half me-2"></span> Auto
+        </button>
+      </div>
+    </div>
   </div>
 </nav>
 
