@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
+import { BeerTableComponent } from './beer-table/beer-table.component';
 
 const routes: Routes = [
-  { path: '', component: LandingComponent }
+  { path: '', component: BeerTableComponent }
 ];
 
 @NgModule({
