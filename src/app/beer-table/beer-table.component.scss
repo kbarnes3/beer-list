@@ -24,3 +24,31 @@ td.mat-cell {
     color: var(--bs-link-hover-color);
   }
 }
+
+.status-cell {
+  text-align: center;
+  
+  i {
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+    
+    &.bi-app {
+      color: #6c757d; // Gray for default
+    }
+    
+    &.bi-suit-heart {
+      color: #0dcaf0; // Cyan for want to try
+    }
+    
+    &.bi-heart-fill {
+      color: #198754; // Green for liked
+    }
+    
+    &.bi-heartbreak-fill {
+      color: #dc3545; // Red for disliked
+    }
+  }
+}
