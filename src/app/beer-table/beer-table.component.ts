@@ -216,4 +216,13 @@ export class BeerTableComponent implements AfterViewInit {
       console.error('Error saving beer statuses:', error);
     }
   }
+
+  clearBeerStatuses() {
+    if (confirm('Are you sure you want to clear all saved beer statuses?')) {
+      localStorage.removeItem(this.STORAGE_KEY);
+      this.dataSource.data.forEach(beer => {
+        beer.status = 'default';
+      });
+    }
+  }
 }
