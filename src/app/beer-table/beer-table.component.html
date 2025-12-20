@@ -2,6 +2,18 @@
 <div class="beer-table-container">
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let beer" class="status-cell">
+        <i 
+          [class]="'bi ' + getStatusIcon(beer.status)" 
+          (click)="cycleStatus(beer)"
+          style="cursor: pointer; font-size: 1.2rem;"
+          title="Click to change status"></i>
+      </td>
+    </ng-container>
+
     <!-- Brewery Column -->
     <ng-container matColumnDef="brewery">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Brewery</th>
@@ -48,5 +60,10 @@
 <p class="data-source">
   <a [href]="data_source_url" target="_blank" rel="noopener noreferrer">
     Beer data source
+  </a>
+</p>
+<p class="clear-status">
+  <a href="#" (click)="clearBeerStatuses(); $event.preventDefault()">
+    Clear saved beer statuses
   </a>
 </p>
