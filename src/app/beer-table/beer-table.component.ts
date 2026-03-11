@@ -27,7 +27,7 @@ export class BeerTableComponent implements AfterViewInit {
       if (sortHeaderId === 'status') {
         return this.getStatusSortValue(beer.status || 'default');
       }
-      return (beer as Record<string, string | number>)[sortHeaderId];
+      return (beer as unknown as Record<string, string | number>)[sortHeaderId];
     };
   }
 
