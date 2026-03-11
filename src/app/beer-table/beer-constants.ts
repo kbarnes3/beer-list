@@ -1,8 +1,8 @@
-export const EVENT_NAME: string = 'Winter Beer Fest 2025';
+export const EVENT_NAME = 'Winter Beer Fest 2025';
 
-export const EVENT_URL: string = 'https://www.washingtonbrewersguild.org/winterbeerfest2025/';
+export const EVENT_URL = 'https://www.washingtonbrewersguild.org/winterbeerfest2025/';
 
-export const DATA_SOURCE_URL: string = 'https://washingtonbrewersguild-my.sharepoint.com/:x:/g/personal/shawna_washingtonbrewersguild_org/IQADseMm6fE5R54LPyb1VvkSARVZMdC4RQY-Y-qswKjFel0?e=MYDKgS';
+export const DATA_SOURCE_URL = 'https://washingtonbrewersguild-my.sharepoint.com/:x:/g/personal/shawna_washingtonbrewersguild_org/IQADseMm6fE5R54LPyb1VvkSARVZMdC4RQY-Y-qswKjFel0?e=MYDKgS';
 
 export interface Beer {
   brewery: string;
