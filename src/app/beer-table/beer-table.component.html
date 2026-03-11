@@ -9,6 +9,9 @@
         <i 
           [class]="'bi ' + getStatusIcon(beer.status)" 
           (click)="cycleStatus(beer)"
+          (keydown.enter)="cycleStatus(beer)"
+          tabindex="0"
+          role="button"
           style="cursor: pointer; font-size: 1.2rem;"
           title="Click to change status"></i>
       </td>

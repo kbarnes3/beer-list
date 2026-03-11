@@ -27,7 +27,7 @@ export class BeerTableComponent implements AfterViewInit {
       if (sortHeaderId === 'status') {
         return this.getStatusSortValue(beer.status || 'default');
       }
-      return (beer as any)[sortHeaderId];
+      return (beer as Record<string, string | number>)[sortHeaderId];
     };
   }
 
@@ -51,7 +51,7 @@ export class BeerTableComponent implements AfterViewInit {
   }
 
   cycleStatus(beer: Beer) {
-    const statusOrder: Array<'default' | 'want' | 'liked' | 'disliked'> = ['default', 'want', 'liked', 'disliked'];
+    const statusOrder: ('default' | 'want' | 'liked' | 'disliked')[] = ['default', 'want', 'liked', 'disliked'];
     const currentIndex = statusOrder.indexOf(beer.status || 'default');
     const nextIndex = (currentIndex + 1) % statusOrder.length;
     beer.status = statusOrder[nextIndex];

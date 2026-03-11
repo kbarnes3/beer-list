@@ -13,7 +13,7 @@ type ThemeMode = 'light' | 'dark' | 'auto';
     imports: [RouterOutlet, NgbDropdownModule, NgClass]
 })
 export class AppComponent implements OnInit {
-  private platformId = inject<Object>(PLATFORM_ID);
+  private platformId = inject<object>(PLATFORM_ID);
 
   title = 'Beer';
   gitVersion: string = versionInfo.hash;
