@@ -8,13 +8,14 @@ $project_root = Split-Path $PSScriptRoot
 $node_root = $project_root
 . $PSScriptRoot\Write-Status.ps1
 
-Write-Status "BaseAngularApp console"
+Write-Status "BeerList console"
 # Set a global variable to indicate we want to set and update some useful console functions
 $Global:console_functions = $true
 
 $modules = Join-Path $node_root "node_modules"
 if (Test-Path $modules) {
     if (-Not($Quick)) {
+        Push-Location $PSScriptRoot
         $currentBranch = & git rev-parse --abbrev-ref HEAD 2>$null
         if ($currentBranch -eq "main") {
             $localSha = & git rev-parse HEAD 2>$null
@@ -38,4 +39,4 @@ else {
     . $PSScriptRoot\Setup.ps1
 }
 
-Write-Status "BaseAngularApp ready"
+Write-Status "BeerList ready"
