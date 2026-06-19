@@ -14,7 +14,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^22.0.2",
     "@angular/cdk": "^22.0.2",
     "@angular/common": "^22.0.2",
     "@angular/compiler": "^22.0.2",
@@ -23,7 +22,6 @@
     "@angular/localize": "^22.0.2",
     "@angular/material": "^22.0.2",
     "@angular/platform-browser": "^22.0.2",
-    "@angular/platform-browser-dynamic": "^22.0.2",
     "@angular/router": "^22.0.2",
     "@types/webpack-env": "^1.18.8",
     "git-describe": "^4.1.1",
