@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, OnInit, AfterViewInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,7 +13,7 @@ import { BeerDetailsDialogComponent } from './beer-details-dialog.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './beer-table.component.scss',
 })
-export class BeerTableComponent implements AfterViewInit {
+export class BeerTableComponent implements OnInit, AfterViewInit {
   private dialog = inject(MatDialog);
 
   event_name = EVENT_NAME;
@@ -25,8 +25,11 @@ export class BeerTableComponent implements AfterViewInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
-  ngAfterViewInit() {
+  ngOnInit() {
     this.loadBeerStatuses();
+  }
+
+  ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.sortingDataAccessor = (beer: Beer, sortHeaderId: string) => {
       if (sortHeaderId === 'status') {
