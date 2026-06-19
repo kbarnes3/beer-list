@@ -1,7 +1,10 @@
 import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
-import { isPlatformBrowser, NgClass } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { versionInfo } from './version-info';
 
 type ThemeMode = 'light' | 'dark' | 'auto';
@@ -10,7 +13,7 @@ type ThemeMode = 'light' | 'dark' | 'auto';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    imports: [RouterOutlet, NgbDropdownModule, NgClass]
+    imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule]
 })
 export class AppComponent implements OnInit {
   private platformId = inject<object>(PLATFORM_ID);
@@ -38,19 +41,23 @@ export class AppComponent implements OnInit {
   }
 
   private applyTheme(theme: ThemeMode) {
-    if (theme === 'auto') {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.setAttribute('data-bs-theme', prefersDark ? 'dark' : 'light');
+    const effectiveTheme = theme === 'auto'
+      ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      : theme;
+    const root = document.documentElement;
+    if (effectiveTheme === 'dark') {
+      root.classList.add('dark');
     } else {
-      document.documentElement.setAttribute('data-bs-theme', theme);
+      root.classList.remove('dark');
     }
+    root.style.colorScheme = effectiveTheme;
   }
 
   getThemeIcon(): string {
     switch (this.currentTheme) {
-      case 'light': return 'bi-sun-fill';
-      case 'dark': return 'bi-moon-fill';
-      case 'auto': return 'bi-circle-half';
+      case 'light': return 'light_mode';
+      case 'dark': return 'dark_mode';
+      case 'auto': return 'contrast';
     }
   }
 }

@@ -7,14 +7,20 @@
 @use '@angular/material' as mat;
 
 html {
+  height: 100%;
+  color-scheme: light;
   @include mat.theme((
     color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
+      primary: mat.$magenta-palette,
+      tertiary: mat.$chartreuse-palette,
     ),
     typography: Roboto,
     density: 0,
   ));
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
@@ -27,43 +33,11 @@ body {
 
   // Reset the user agent margin.
   margin: 0;
+  height: 100%;
 }
-$break-large: 720px;
-
-/* Override Bootstrap variables as desired before importing Bootstrap */
-$primary: #f46bd9;
 
 /* Override Fork Me ribbon colors */
 .github-fork-ribbon.right-top:before {
   background-color: #444;
 }
 
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
-
-/* Import Bootstrap Icons */
-@import 'bootstrap-icons/font/bootstrap-icons.css';
-
-.main-container {
-  padding-top: 20px;
-}
-
-.footer {
-  padding-top: 40px;
-  padding-bottom: 30px;
-  margin-top: 100px;
-  color: #777;
-  text-align: center;
-  border-top: 1px solid #e5e5e5;
-
-  @media screen and (min-width: $break-large) {
-    text-align: left;
-
-    p {
-      margin-bottom: 0;
-    }
-  }
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

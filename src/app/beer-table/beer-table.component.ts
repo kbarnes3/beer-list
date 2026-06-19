@@ -1,16 +1,20 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSortModule, MatSort } from '@angular/material/sort';
-import { NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
 import { BEER_DATA, Beer, EVENT_NAME, EVENT_URL, DATA_SOURCE_URL } from './beer-constants';
+import { BeerDetailsDialogComponent } from './beer-details-dialog.component';
 
 @Component({
   selector: 'app-beer-table',
-  imports: [MatTableModule, MatSortModule, NgbPopoverModule],
+  imports: [MatTableModule, MatSortModule, MatIconModule],
   templateUrl: './beer-table.component.html',
   styleUrl: './beer-table.component.scss',
 })
 export class BeerTableComponent implements AfterViewInit {
+  private dialog = inject(MatDialog);
+
   event_name = EVENT_NAME;
   event_url = EVENT_URL;
   data_source_url = DATA_SOURCE_URL;
@@ -31,12 +35,19 @@ export class BeerTableComponent implements AfterViewInit {
     };
   }
 
+  openBeerDetails(beer: Beer) {
+    this.dialog.open(BeerDetailsDialogComponent, {
+      data: { name: beer.name, description: beer.description },
+      width: '420px',
+    });
+  }
+
   getStatusIcon(status: string | undefined): string {
     switch (status) {
-      case 'want': return 'bi-suit-heart';
-      case 'liked': return 'bi-heart-fill';
-      case 'disliked': return 'bi-heartbreak-fill';
-      default: return 'bi-app';
+      case 'want': return 'favorite_border';
+      case 'liked': return 'favorite';
+      case 'disliked': return 'heart_broken';
+      default: return 'check_box_outline_blank';
     }
   }
 

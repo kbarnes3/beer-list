@@ -1,35 +1,34 @@
-<!-- Fixed navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <span class="navbar-brand">🍺{{ title }}🍺</span>
-    <div class="ms-auto" ngbDropdown>
-      <button class="btn btn-outline-light" ngbDropdownToggle>
-        <span class="bi" [ngClass]="getThemeIcon()"></span>
-      </button>
-      <div ngbDropdownMenu class="dropdown-menu-end">
-        <button ngbDropdownItem (click)="setTheme('light')" [class.active]="currentTheme === 'light'">
-          <span class="bi bi-sun-fill me-2"></span> Light
-        </button>
-        <button ngbDropdownItem (click)="setTheme('dark')" [class.active]="currentTheme === 'dark'">
-          <span class="bi bi-moon-fill me-2"></span> Dark
-        </button>
-        <button ngbDropdownItem (click)="setTheme('auto')" [class.active]="currentTheme === 'auto'">
-          <span class="bi bi-circle-half me-2"></span> Auto
-        </button>
-      </div>
-    </div>
-  </div>
-</nav>
+<mat-toolbar class="app-toolbar">
+  <span class="app-brand">🍺{{ title }}🍺</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="themeMenu" aria-label="Choose theme">
+    <mat-icon>{{ getThemeIcon() }}</mat-icon>
+  </button>
+  <mat-menu #themeMenu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="setTheme('light')" [class.active]="currentTheme === 'light'">
+      <mat-icon>light_mode</mat-icon>
+      <span>Light</span>
+    </button>
+    <button mat-menu-item (click)="setTheme('dark')" [class.active]="currentTheme === 'dark'">
+      <mat-icon>dark_mode</mat-icon>
+      <span>Dark</span>
+    </button>
+    <button mat-menu-item (click)="setTheme('auto')" [class.active]="currentTheme === 'auto'">
+      <mat-icon>contrast</mat-icon>
+      <span>Auto</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
 
-<div class="container main-container">
+<div class="main-container">
   <router-outlet></router-outlet>
-</div> <!-- /container -->
+</div>
 
 <!-- If you don't need this ribbon, you can also uninstall the github-fork-ribbon-css npm package -->
 <!-- The color for this ribbon is overridden in styles.scss -->
-<a class="github-fork-ribbon right-top d-none d-md-block" href="https://github.com/kbarnes3/beer-list" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<a class="github-fork-ribbon right-top" href="https://github.com/kbarnes3/beer-list" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 <footer class="footer" role="contentinfo">
-  <div class="container">
+  <div class="footer-inner">
     <p>&copy; 2026 Kevin Barnes </p>
     <p>Built from version {{ gitVersion }}</p>
   </div>

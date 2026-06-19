@@ -17,37 +17,41 @@ td.mat-cell {
 
 .beer-name {
   cursor: pointer;
-  color: var(--bs-link-color);
+}
+
+.beer-name-link {
+  color: var(--mat-sys-primary);
   text-decoration: underline;
 
   &:hover {
-    color: var(--bs-link-hover-color);
+    color: var(--mat-sys-tertiary);
   }
 }
 
 .status-cell {
   text-align: center;
-  
-  i {
+
+  .status-icon {
+    cursor: pointer;
     transition: transform 0.2s ease;
-    
+
     &:hover {
       transform: scale(1.2);
     }
-    
-    &.bi-app {
-      color: #6c757d; // Gray for default
+
+    &.status-default {
+      color: var(--mat-sys-on-surface-variant); // Gray for default
     }
-    
-    &.bi-suit-heart {
+
+    &.status-want {
       color: #0dcaf0; // Cyan for want to try
     }
-    
-    &.bi-heart-fill {
+
+    &.status-liked {
       color: #198754; // Green for liked
     }
-    
-    &.bi-heartbreak-fill {
+
+    &.status-disliked {
       color: #dc3545; // Red for disliked
     }
   }
