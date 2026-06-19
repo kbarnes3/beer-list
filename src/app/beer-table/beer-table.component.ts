@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,6 +10,7 @@ import { BeerDetailsDialogComponent } from './beer-details-dialog.component';
   selector: 'app-beer-table',
   imports: [MatTableModule, MatSortModule, MatIconModule],
   templateUrl: './beer-table.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './beer-table.component.scss',
 })
 export class BeerTableComponent implements AfterViewInit {
