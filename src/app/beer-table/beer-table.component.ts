@@ -10,7 +10,7 @@ import { BeerDetailsDialogComponent } from './beer-details-dialog.component';
   selector: 'app-beer-table',
   imports: [MatTableModule, MatSortModule, MatIconModule],
   templateUrl: './beer-table.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './beer-table.component.scss',
 })
 export class BeerTableComponent implements AfterViewInit {

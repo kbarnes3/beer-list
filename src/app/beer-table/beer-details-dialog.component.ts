@@ -10,7 +10,7 @@ export interface BeerDetailsData {
 @Component({
   selector: 'app-beer-details-dialog',
   imports: [MatDialogModule, MatButtonModule],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './beer-details-dialog.component.html',
 })
 export class BeerDetailsDialogComponent {

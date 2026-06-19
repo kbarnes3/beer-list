@@ -5,12 +5,9 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine",
-      "webpack-env",
+      "webpack-env"
     ]
   },
-  "files": [
-    "src/test.ts"
-  ],
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
@@ -21,7 +18,6 @@
         "nullishCoalescingNotNullable": "suppress",
         "optionalChainNotNullable": "suppress"
       }
-    },
-    "strictTemplates": false
+    }
   }
 }
