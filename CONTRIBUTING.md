@@ -41,8 +41,8 @@ This project has a suite of verification that runs on every Pull Request using [
 
 1. Start a console with ```scripts/Console.ps1```.
 1. Run ```ng test```.
-1. Karma will run. A browser will open and show the test results. If you make any changes before stopping Karma, they will immediately be picked up and cause a test rerun.
-1. When you are done, use ```Ctrl + C``` to exit Karma.
+1. Vitest will run in watch mode and print the test results to your console. If you make any changes before stopping Vitest, they will immediately be picked up and cause a test rerun.
+1. When you are done, use ```Ctrl + C``` to exit Vitest.
 
 ## Linting
 1. Start a console with ```scripts/Console.ps1```.
