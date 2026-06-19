@@ -1,0 +1,53 @@
+.app-toolbar {
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+
+  .mat-mdc-icon-button {
+    --mat-icon-button-state-layer-color: var(--mat-sys-on-primary);
+    color: var(--mat-sys-on-primary);
+  }
+}
+
+.app-brand {
+  font-weight: 500;
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.main-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px 16px 0;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-top: 100px;
+  color: var(--mat-sys-on-surface-variant);
+  text-align: center;
+  border-top: 1px solid var(--mat-sys-outline-variant);
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 720px) {
+  .footer {
+    text-align: left;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+::ng-deep .mat-mdc-menu-item.active {
+  background-color: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+}
