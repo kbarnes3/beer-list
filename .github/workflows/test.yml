@@ -24,7 +24,7 @@ jobs:
         cache: 'npm'
     - name: Install Node dependencies
       run: |
-        npm install --location=global npm@11
+        npm install --location=global npm@12
         npm install --location=global @angular/cli
         npm ci
     - name: Run ng lint
