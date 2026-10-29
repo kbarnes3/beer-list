@@ -32,7 +32,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
-          node-version: 24.22.1
+          node-version: 26.13.0
       - run: npm install --location=global npm@12
       - run: npm ci
       - run: npm run build
